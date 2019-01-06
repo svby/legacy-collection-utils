@@ -5,7 +5,7 @@
 
     <groupId>net.notiocide.legacy-collection-utils</groupId>
     <artifactId>legacy-collection-utils</artifactId>
-    <version>0.1</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <properties>
