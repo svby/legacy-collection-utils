@@ -10,8 +10,8 @@ internal class IteratorEnumeration<E>(private val iterator: Iterator<E>) : Enume
 }
 
 /**
- * Returns an [Enumeration] that traverses the remaining elements covered by this [Iterable].
+ * Returns an [Enumeration] that traverses the remaining elements covered by this [Iterator].
  *
  * Traversal is undefined if any methods are called on this iterable after the call to asEnumeration.
  */
-fun <T> Iterable<T>.asEnumeration(): Enumeration<T> = IteratorEnumeration(iterator())
+fun <T> Iterator<T>.asEnumeration(): Enumeration<T> = IteratorEnumeration(this)
