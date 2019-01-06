@@ -15,6 +15,22 @@ fun <K : Any, V : Any> hashtableOf(): Hashtable<K, V> =
 fun <K : Any, V : Any> hashtableOf(vararg pairs: Pair<K, V>): Hashtable<K, V> =
     Hashtable(mapOf(*pairs))
 
-/** Returns a new [Hashtable] containing all key-value pairs from the original map. */
-fun <K : Any, V : Any> Map<K, V>.toHashtable() =
+/** Returns a new [Hashtable] containing all key-value pairs from the original [Map]. */
+fun <K : Any, V : Any> Map<K, V>.toHashtable(): Hashtable<K, V> =
     Hashtable(this)
+
+/** Returns a new [Hashtable] containing all key-value pairs from the original [Dictionary]. */
+fun <K : Any, V : Any> Dictionary<K, V>.toHashtable(): Hashtable<K, V> =
+    Hashtable(toMap())
+
+/** Returns a new [Hashtable] containing all key-value pairs from the original hashtable. */
+fun <K : Any, V : Any> Hashtable<K, V>.toHashtable(): Hashtable<K, V> =
+    Hashtable(this)
+
+/** Returns a new [Hashtable] containing all key-value pairs from the given collection of [Pair]s. */
+fun <K : Any, V : Any> Iterable<Pair<K, V>>.toHashtable(): Hashtable<K, V> =
+    Hashtable(toMap())
+
+/** Returns a new [Hashtable] containing all key-value pairs from the given [Sequence] of [Pair]s. */
+fun <K : Any, V : Any> Sequence<Pair<K, V>>.toHashtable(): Hashtable<K, V> =
+    Hashtable(toMap())

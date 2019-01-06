@@ -1,0 +1,5 @@
+Bundle-SymbolicName: net.notiocide.legacy-collection-utils
+Export-Package: net.notiocide.legacyutil
+
+-sources: true
+-contract: *
